@@ -40,11 +40,39 @@ class _MyAppState extends State<MyApp> {
               )),
         ),
       ),
-      body: Center(
-          child: Text(
-        'Aathil Ahamed',
-        style: TextStyle(color: Colors.red, fontSize: 25),
-      )),
+      body: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.red,
+            ),
+            Text("Aathil"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.red,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.green,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                )
+              ],
+            )
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         elevation: 10.0,
         child: Icon(Icons.camera),
