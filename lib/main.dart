@@ -16,33 +16,29 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text("Button Bar"),
       ),
-      body: Container(
-        child: ButtonBar(
-          alignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () {
-                  print("Home");
-                }),
-            IconButton(
-                icon: Icon(Icons.inbox),
-                onPressed: () {
-                  print("Inbox");
-                }),
-            IconButton(
-                icon: Icon(Icons.mail),
-                onPressed: () {
-                  print("Mail");
-                }),
-            IconButton(
-                icon: Icon(Icons.local_offer),
-                onPressed: () {
-                  print("Promotion");
-                })
-          ],
+      body: Center(
+          child: Card(
+        color: Colors.white38,
+        child: Container(
+          padding: EdgeInsets.all(10),
+          height: 100,
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Don't think too much!",
+                style: TextStyle(fontSize: 24),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Aathil Ahamed",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
         ),
-      ),
+      )),
     );
   }
 }
