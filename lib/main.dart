@@ -10,46 +10,42 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  void showBottom() {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext context) {
-          return Container(
-            padding: EdgeInsets.all(10.0),
-            child: Row(
-              children: [
-                Text("Welcome to Flutter Tutorial"),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "OK",
-                    style: TextStyle(color: Colors.red, fontSize: 18),
-                  ),
-                )
-              ],
-            ),
-          );
-        });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Button Bar"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text(
-            "Click Here",
-            style: TextStyle(color: Colors.white, fontSize: 24),
-          ),
-          onPressed: showBottom,
-          color: Colors.blue,
+        appBar: AppBar(
+          title: Text("Button Bar"),
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: 250,
+                color: Colors.red,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                height: 250,
+                color: Colors.yellow,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                height: 250,
+                color: Colors.orange,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                height: 250,
+                color: Colors.yellowAccent,
+              )
+            ],
+          ),
+        ));
   }
 }
