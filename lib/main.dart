@@ -12,36 +12,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String _value = ' ';
+
+  void _onChnaged(String value) {
+    setState(() {
+      _value = "On Change " + value;
+    });
+  }
+
+  void _onSubmit(String value) {
+    setState(() {
+      _value = "On Submit " + value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Row Scroll"),
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
+      body: Center(
+        child: Column(
           children: [
-            Container(height: 100, width: 150, color: Colors.red),
-            SizedBox(
-              width: 10,
-            ),
-            Container(height: 100, width: 150, color: Colors.yellow),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
-              height: 100,
-              width: 150,
-              color: Colors.orange,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
-              height: 100,
-              width: 150,
-              color: Colors.purple,
+            Text(_value),
+            TextField(
+              onChanged: _onChnaged,
+              onSubmitted: _onSubmit,
             )
           ],
         ),
